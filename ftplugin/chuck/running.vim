@@ -26,7 +26,7 @@ endfunction
 function! ChuckRemoveSelected()
     let g:shredSel = input('Which shred do you want to remove?')
     call vimproc#system_bg(g:chuck_command . " --remove " . g:shredSel)
-    if g:shreds > 0
+    if g:shreds > 0 && g:shreds == g:shredSel
 	 let g:shreds-=1
     endif
 endfunction
