@@ -19,17 +19,17 @@ Open chuck in another terminal window in loop mode (chuck --loop).
 Open all files in different buffers not new instances of vim. (e.g. :tabnew then :e file2.ck)
 The following functions can be used to interact with the Chuck VM:
 
-+  add current buffer
--  remove last added shred
-=  replace last added shred
+\+  add current buffer
+\-  remove last added shred
+\=  replace last added shred
 
-@ select shred no.
+\@ select shred no.
 \#  remove selected shred
-$  remove selected shred
+\$  remove selected shred
 
-_ remove all shreds
-* add all open buffers
+\_ remove all shreds
+\* add all open buffers
 
-^ status
+\^ status
 
 
