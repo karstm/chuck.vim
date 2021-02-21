@@ -2,10 +2,6 @@ if !exists("g:shreds")
     let g:shreds=0
 endif
 
-if !exists("g:shredSel")
-    let g:shredSel=0
-endif
-
 if !exists("g:chuck_command")
     let g:chuck_command = "chuck"
 endif
@@ -28,6 +24,7 @@ endfunction
 
 
 function! ChuckRemoveSelected()
+    let g:shredSel = input('Which shred do you want to remove?')
     call vimproc#system_bg(g:chuck_command . " --remove " . g:shredSel)
     if g:shreds > 0
 	 let g:shreds-=1
@@ -35,6 +32,7 @@ function! ChuckRemoveSelected()
 endfunction
 
 function! ChuckReplaceSelected()
+    let g:shredSel = input('Which shred do you want to replace?')
     call vimproc#system_bg(g:chuck_command . " --replace " . g:shredSel . " " . bufname("%"))
 endfunction
 
@@ -45,10 +43,6 @@ endfunction
 
 function! ChuckStatus()
     call vimproc#system_bg(g:chuck_command . " --status")
-endfunction
-
-function! ChuckSelectShred()
-    let g:shredSel = input('Shred to select: ')
 endfunction
 
 function! GetActiveBuffers()
@@ -73,11 +67,10 @@ nnoremap <buffer> + :call ChuckAdd()<cr>
 nnoremap <buffer> - :call ChuckRemoveLast()<cr>
 nnoremap <buffer> = :call ChuckReplaceLast()<cr>
 
-nnoremap <buffer> # :call ChuckRemoveSelected()<cr>
-nnoremap <buffer> $ :call ChuckReplaceSelected()<cr>
+nnoremap <buffer> @ :call ChuckRemoveSelected()<cr>
+nnoremap <buffer> # :call ChuckReplaceSelected()<cr>
 
 nnoremap <buffer> _ :call ChuckRemoveAll()<cr>
 nnoremap <buffer> ^ :call ChuckStatus()<cr>
-nnoremap <buffer> @ :call ChuckSelectShred()<cr>
 
 nnoremap <buffer> * :call ChuckAddAll()<cr>
