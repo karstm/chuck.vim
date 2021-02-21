@@ -1,30 +1,27 @@
 chuck.vim
 =========
+This is a fork from Andy Wilsons [Plug-In](https://github.com/wilsaj/chuck.vim).
+This version doesn't start ChucK in Vim but adds a way to remove or replace shreds.
 
-A vim plugin for [ChucK](http://chuck.stanford.edu/), a programming language for
-real-time sound synthesis and music creation. Currently supports syntax highlighting,
-and controling the Chuck VM(e.g. starting/stopping shreds).
+Currently supports syntax highlighting,and controling the Chuck VM(e.g. starting/stopping shreds).
 
 installation
 ------------
-
 This plugin depends on [vimproc](https://github.com/Shougo/vimproc.vim) for controlling the Chuck VM.
-
 Install with any Plug-in manager or you can also copy the files manually.
 
 usage
 ------------
-Open chuck in another terminal window in loop mode (chuck --loop).
-Open all files in different buffers not new instances of vim. (e.g. :tabnew then :e file2.ck)
+Open chuck in another terminal window in the same directory in loop mode (chuck --loop).
+Open all files in different buffers (not new instances of vim!). (e.g. :tabnew then :e file2.ck)
 The following functions can be used to interact with the Chuck VM:
 
 \+   add current buffer <br/>
 \-   remove last added shred <br/>
 \=   replace last added shred <br/>
 <br/>
-\@   select shred no. <br/>
-\#   remove selected shred <br/>
-\$   remove selected shred <br/>
+\@   remove selected shred <br/>
+\#   replace selected shred <br/>
 <br/>
 \_  remove all shreds <br/>
 \*  add all open buffers <br/>
