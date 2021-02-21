@@ -73,11 +73,11 @@ nnoremap <buffer> + :call ChuckAdd()<cr>
 nnoremap <buffer> - :call ChuckRemoveLast()<cr>
 nnoremap <buffer> = :call ChuckReplaceLast()<cr>
 
-nnoremap <buffer> <leader>- :call ChuckRemoveSelected()<cr>
-nnoremap <buffer> <leader>= :call ChuckReplaceSelected()<cr>
+nnoremap <buffer> # :call ChuckRemoveSelected()<cr>
+nnoremap <buffer> $ :call ChuckReplaceSelected()<cr>
 
 nnoremap <buffer> _ :call ChuckRemoveAll()<cr>
 nnoremap <buffer> ^ :call ChuckStatus()<cr>
-nnoremap <buffer> * :call ChuckSelectShred()<cr>
+nnoremap <buffer> @ :call ChuckSelectShred()<cr>
 
-nnoremap <buffer> <leader>+ :call ChuckAddAll()<cr>
+nnoremap <buffer> * :call ChuckAddAll()<cr>
