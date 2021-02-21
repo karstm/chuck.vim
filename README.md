@@ -10,8 +10,7 @@ installation
 
 This plugin depends on [vimproc](https://github.com/Shougo/vimproc.vim) for controlling the Chuck VM.
 
-Install with any Plug-in manager or you can also copy the files manually to their corresponding directories in
-your `~/.vim/` directory if you're into the taste of awfulness.
+Install with any Plug-in manager or you can also copy the files manually.
 
 usage
 ------------
