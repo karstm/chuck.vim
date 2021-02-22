@@ -28,14 +28,8 @@ syntax keyword chuckKeyword cherr chout
 highlight link chuckKeyword Keyword
 
 
-syntax keyword chuckOperator => @=> =^
-syntax keyword chuckOperator + - * /
-syntax keyword chuckOperator %
-syntax keyword chuckOperator "&&" "||" == != >=
-syntax keyword chuckOperator & + ^
-syntax keyword chuckOperator ++ --
-syntax keyword chuckOperator ! + -
-syntax keyword chuckOperator <<< >>>
+syntax match   chuckOperator "\s*\(@\|+\|-\|*\|/\|%\|&\||\|!\)\==\(>\|<\|^\)\s*"  
+syntax match   chuckOperator "\s*\(<<<\|>>>\|&&\|||\|!\)\s*" 
 highlight link chuckOperator Operator
 
 syntax keyword chuckRepeat while until for do
