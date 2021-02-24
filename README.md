@@ -13,7 +13,7 @@ Install with any Plug-in manager or you can also copy the files manually.
 usage
 ------------
 Open chuck in another terminal window in the same directory in loop mode (chuck --loop).
-Open all files in different buffers (not new instances of vim!). (e.g. :tabnew then :e file2.ck)
+Open all files in different buffers (not new instances of vim!). (e.g. :tabnew file2.ck)
 The following functions can be used to interact with the Chuck VM:
 
 \+   add current buffer <br/>
