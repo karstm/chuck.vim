@@ -8,6 +8,7 @@ function! Chuck(command, args)
 endfunction
 
 function! ChuckAdd()
+    write
     call Chuck("add", bufname("%"))
     let g:shreds+=1
 endfunction
@@ -20,6 +21,7 @@ function! ChuckRemoveLast()
 endfunction
 
 function! ChuckReplaceLast()
+    write
     call Chuck("replace", g:shreds . " " . bufname("%"))
 endfunction
 
@@ -32,6 +34,7 @@ function! ChuckRemoveSelected()
 endfunction
 
 function! ChuckReplaceSelected()
+    write
     let g:shredSel = input('Which shred do you want to replace? ')
     call Chuck("replace", g:shredSel . " " . bufname("%")) 
 endfunction
