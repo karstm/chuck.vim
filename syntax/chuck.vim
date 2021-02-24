@@ -4,14 +4,14 @@ endif
 
 syntax keyword chuckBoolean true false maybe
 syntax keyword chuckBoolean null NULL
-highlight link chuckBoolean Boolean
+hi def link chuckBoolean Boolean
 
 syntax match chuckComment "\v//.*$"
 syntax region  chuckComment start="/\*"  end="\*/"
-highlight link chuckComment Comment
+hi def link chuckComment Comment
 
 syntax keyword chuckConditional if else
-highlight link chuckConditional Conditional
+hi def link chuckConditional Conditional
 
 syntax keyword chuckKeyword fun function
 syntax keyword chuckKeyword return
@@ -25,21 +25,19 @@ syntax keyword chuckKeyword repeat break continue
 syntax keyword chuckKeyword class extends public private static pure this
 syntax keyword chuckKeyword spork
 syntax keyword chuckKeyword cherr chout
-highlight link chuckKeyword Keyword
-
+hi def link chuckKeyword Keyword
 
 syntax match   chuckOperator "\s*\(@\|+\|-\|*\|/\|%\|&\||\|!\)\==\(>\|<\|^\)\s*"  
 syntax match   chuckOperator "\s*\(<<<\|>>>\|&&\|||\|!\)\s*" 
-highlight link chuckOperator Operator
+hi def link chuckOperator Operator
 
 syntax keyword chuckRepeat while until for do
-highlight link chuckRepeat Repeat
+hi def link chuckRepeat Repeat
 
 syntax keyword chuckType int float time dur void string
 syntax keyword chuckType array ugen complex polar
 syntax keyword chuckType Object Event UGen
-highlight link chuckType Type
-
+hi def link chuckType Type
 
 syntax keyword chuckBuiltinUGen adc blackhole dac
 syntax keyword chuckBuiltinUGen Gain
@@ -64,43 +62,41 @@ syntax keyword chuckBuiltinUGen Chorus Modulate PitShift SubNoise Blit BlitSaw B
 syntax keyword chuckBuiltinUGen WvIn WaveLoop WvOut
 syntax keyword chuckBuiltinUGen GenX LiSa Dyno
 syntax keyword chuckBuiltinUGen Chugen Chubgraph
-highlight link chuckBuiltinUGen Structure
+hi def link chuckBuiltinUGen Structure
 
 syntax keyword chuckBuiltinUAna UAna UAnaBlob Windowing
 syntax keyword chuckBuiltinUAna FFT IFFT DCT IDCT
 syntax keyword chuckBuiltinUAna Centroid Flux RMS RollOff
 syntax keyword chuckBuiltinUAna Flip pilF
-highlight link chuckBuiltinUAna Structure
+hi def link chuckBuiltinUAna Structure
 
 syntax keyword chuckChugin ABSaturator AmbPan Bitcrusher Elliptic ExpDelay FIR
 syntax keyword chuckChugin FluidSynth GVerb KasFilter Ladspa MagicSine Mesh2D
 syntax keyword chuckChugin Multicomb Overdrive PanN PitchTrack PowerADSR Sigmund
 syntax keyword chuckChugin Spectacle WinFuncEnv
-highlight link chuckChugin Structure
+hi def link chuckChugin Structure
 
 syntax keyword chuckEvent OscRecv OscSend OscEvent OscOut OscIn OscMsg
 syntax keyword chuckEvent MidiIn MidiOut MidiMsg
 syntax keyword chuckEvent KBHit Hid HidMsg
-highlight link chuckEvent Special
+hi def link chuckEvent Special
 
 syntax keyword chuckIO Machine RegEx FileIO SerialIO StringTokenizer ConsoleInput
-highlight link chuckIO Special
+hi def link chuckIO Special
 
 syntax keyword chuckLib Math Std
-highlight link chuckLib Special
-
+hi def link chuckLib Special
 
 syntax match chuckNumber /\%(\i\|\$\)\@<![-]\?\d\+/ display
-highlight link chuckNumber Number
+hi def link chuckNumber Number
 
 syntax match chuckHex /\<0[xX]\x\+[lL]\=\>/ display
-highlight link chuckHex Number
+hi def link chuckHex Number
 
 syntax match chuckFloat /\%(\i\|\$\)\@<![-]\?\%(\d*\.\d\+\|\d\+\.\)/ display
-highlight link chuckFloat Float
+hi def link chuckFloat Float
 
 syntax region chuckString start=/"/ end=/"/ display
-highlight link chuckString String
+hi def link chuckString String
 
 let b:current_syntax = "chuck"
-
