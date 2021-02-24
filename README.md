@@ -1,13 +1,13 @@
 chuck.vim
 =========
-This is a fork from Andy Wilsons [Plug-In](https://github.com/wilsaj/chuck.vim).
-This version doesn't start ChucK in Vim but adds a way to remove or replace shreds.
+This is a rewrite of Andy Wilsons [Plug-In](https://github.com/wilsaj/chuck.vim).
+This version doesn't start ChucK in Vim but adds a way to remove or replace shreds and doesn't depend on vimproc.
 
 Currently supports syntax highlighting,and controling the Chuck VM(e.g. starting/stopping shreds).
 
 installation
 ------------
-This plugin depends on [vimproc](https://github.com/Shougo/vimproc.vim) for controlling the Chuck VM.
+This plugin doesn't have any prerequisits.
 Install with any Plug-in manager or you can also copy the files manually.
 
 usage
