@@ -16,12 +16,12 @@ Open chuck in another terminal window in the same directory in loop mode (chuck 
 Open all files in different buffers (not new instances of vim!). (e.g. :tabnew file2.ck)
 The following functions can be used to interact with the Chuck VM:
 
-\+   add current buffer <br/>
+\+   save and add current buffer <br/>
 \-   remove last added shred <br/>
-\=   replace last added shred <br/>
+\=   save buffer and replace last added shred <br/>
 <br/>
 \@   remove selected shred <br/>
-\#   replace selected shred <br/>
+\#   save buffer and replace selected shred <br/>
 <br/>
 \_  remove all shreds <br/>
 \*  add all open buffers <br/>
