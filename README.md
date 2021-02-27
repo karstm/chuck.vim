@@ -1,9 +1,9 @@
 chuck.vim
 =========
-This is a rewrite of Andy Wilsons [Plug-In](https://github.com/wilsaj/chuck.vim).
+This is a a complete rewrite of Andy Wilsons [Plug-In](https://github.com/wilsaj/chuck.vim) except for syntax highlighting.
 This version doesn't start ChucK in Vim but adds a way to remove or replace shreds and doesn't depend on vimproc.
 
-Currently supports syntax highlighting,and controling the Chuck VM(e.g. adding/replacing/removing shreds) and getting error messages in Vim.
+Currently supports syntax highlighting, controling the Chuck VM(e.g. adding/replacing/removing shreds) and getting error messages in Vim.
 
 installation
 ------------
