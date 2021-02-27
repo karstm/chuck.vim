@@ -3,7 +3,7 @@ chuck.vim
 This is a rewrite of Andy Wilsons [Plug-In](https://github.com/wilsaj/chuck.vim).
 This version doesn't start ChucK in Vim but adds a way to remove or replace shreds and doesn't depend on vimproc.
 
-Currently supports syntax highlighting,and controling the Chuck VM(e.g. starting/stopping shreds).
+Currently supports syntax highlighting,and controling the Chuck VM(e.g. adding/replacing/removing shreds) and getting error messages in Vim.
 
 installation
 ------------
