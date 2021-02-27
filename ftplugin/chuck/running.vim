@@ -3,49 +3,50 @@ if !exists("g:shreds")
 endif
 
 function! Chuck(command, args)
-    silent execute "!chuck --". a:command . " " . a:args 
-    redraw! 
+    let msg = system("chuck --". a:command . " " . a:args)  
+    redraw!
+    return msg
 endfunction
 
 function! ChuckAdd()
     write
-    call Chuck("add", bufname("%"))
     let g:shreds+=1
+    return Chuck("add", bufname("%"))
 endfunction
 
 function! ChuckRemoveLast()
-    call Chuck("remove", g:shreds)
     if g:shreds > 0
 	      let g:shreds-=1
     endif
+    return Chuck("remove", g:shreds)
 endfunction
 
 function! ChuckReplaceLast()
     write
-    call Chuck("replace", g:shreds . " " . bufname("%"))
+    return Chuck("replace", g:shreds . " " . bufname("%"))
 endfunction
 
 function! ChuckRemoveSelected()
     let g:shredSel = input('Which shred do you want to remove? ')
-    call Chuck("remove", g:shredSel) 
     if g:shreds > 0 && g:shreds == g:shredSel
 	      let g:shreds-=1
     endif
+    return Chuck("remove", g:shredSel) 
 endfunction
 
 function! ChuckReplaceSelected()
     write
     let g:shredSel = input('Which shred do you want to replace? ')
-    call Chuck("replace", g:shredSel . " " . bufname("%")) 
+    return Chuck("replace", g:shredSel . " " . bufname("%")) 
 endfunction
 
 function! ChuckRemoveAll()
-    call Chuck("remove.all", "") 
     let g:shreds=0
+    return Chuck("remove.all", "") 
 endfunction
 
 function! ChuckStatus()
-    call Chuck("status", "") 
+    return Chuck("status", "") 
 endfunction
 
 function! GetActiveBuffers()
@@ -61,18 +62,18 @@ function! GetActiveBuffers()
 endfunction
 
 function! ChuckAddAll()
-    call Chuck("add", join(GetActiveBuffers()))
     let g:shreds+=len(GetActiveBuffers())
+    return Chuck("add", join(GetActiveBuffers()))
 endfunction
 
-nnoremap <buffer> + :call ChuckAdd()<cr>
-nnoremap <buffer> - :call ChuckRemoveLast()<cr>
-nnoremap <buffer> = :call ChuckReplaceLast()<cr>
+nnoremap <buffer> + :echo ChuckAdd()<cr>
+nnoremap <buffer> - :echo ChuckRemoveLast()<cr>
+nnoremap <buffer> = :echo ChuckReplaceLast()<cr>
 
-nnoremap <buffer> @ :call ChuckRemoveSelected()<cr>
-nnoremap <buffer> # :call ChuckReplaceSelected()<cr>
+nnoremap <buffer> @ :echo ChuckRemoveSelected()<cr>
+nnoremap <buffer> # :echo ChuckReplaceSelected()<cr>
 
-nnoremap <buffer> _ :call ChuckRemoveAll()<cr>
-nnoremap <buffer> ^ :call ChuckStatus()<cr>
+nnoremap <buffer> _ :echo ChuckRemoveAll()<cr>
+nnoremap <buffer> ^ :echo ChuckStatus()<cr>
 
-nnoremap <buffer> * :call ChuckAddAll()<cr>
+nnoremap <buffer> * :echo ChuckAddAll()<cr>
