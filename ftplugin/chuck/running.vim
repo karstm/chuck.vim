@@ -11,7 +11,7 @@ endfunction
 function! ChuckAdd()
     write
     let g:shreds+=1
-    echo Chuck("add", bufname("%"))
+    echo Chuck("add", expand("%"))
 endfunction
 
 function! ChuckRemoveLast()
@@ -23,7 +23,7 @@ endfunction
 
 function! ChuckReplaceLast()
     write
-    echo Chuck("replace", g:shreds . " " . bufname("%"))
+    echo Chuck("replace", g:shreds . " " . expand("%"))
 endfunction
 
 function! ChuckRemoveSelected()
@@ -37,7 +37,7 @@ endfunction
 function! ChuckReplaceSelected()
     write
     let g:shredSel = input('Which shred do you want to replace? ')
-    echo Chuck("replace", g:shredSel . " " . bufname("%")) 
+    echo Chuck("replace", g:shredSel . " " . expand("%")) 
 endfunction
 
 function! ChuckRemoveAll()
